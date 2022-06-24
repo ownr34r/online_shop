@@ -35,11 +35,17 @@ class _CategoriesState extends State<Categories> {
     'tools',
     'Jewellery',
     'Footwear',
-    'Dresses',];
-    int selectIndex  = 0;
-  
+    'Dresses',
+  ];
+  int selectIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 25,child: ListView.builder(itemBuilder: (),),);
+    return SizedBox(
+      height: 25,
+      child: ListView.builder(
+        itemBuilder: (context, index) => Text(data),
+      ),
+    );
   }
 }
