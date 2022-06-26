@@ -31,7 +31,7 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  List<Categories> categories = [
+  List<String> categories = [
     'tools',
     'Jewellery',
     'Footwear',
@@ -44,8 +44,14 @@ class _CategoriesState extends State<Categories> {
     return SizedBox(
       height: 25,
       child: ListView.builder(
-        itemBuilder: (context, index) => Text(data),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => buildCategory(index),
       ),
     );
   }
+
+  Widget buildCategory(int index) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: Text(categories[index]),
+      );
 }
