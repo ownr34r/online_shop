@@ -40,6 +40,7 @@ class Body extends StatelessWidget {
   }
 }
 
+<<<<<<< HEAD
 class ItemCard extends StatelessWidget {
   final Product product;
   final Function press;
@@ -74,6 +75,37 @@ class ItemCard extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         )
       ],
+
+class Categories extends StatefulWidget {
+  Categories({Key? key}) : super(key: key);
+
+  @override
+  State<Categories> createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  List<String> categories = [
+    'tools',
+    'Jewellery',
+    'Footwear',
+    'Dresses',
+  ];
+  int selectIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 25,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => buildCategory(index),
+      ),
+
     );
   }
+
+  Widget buildCategory(int index) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: Text(categories[index]),
+      );
 }
