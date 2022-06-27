@@ -9,31 +9,38 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: SvgPicture.asset('assets/icon/back.svg'),
+      appBar: buildAppBar(),
+      body: const Body(),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: IconButton(
+        icon: SvgPicture.asset('assets/icons/back.svg'),
+        onPressed: () {},
+      ),
+      actions: [
+        IconButton(
+          icon: SvgPicture.asset(
+            'assets/icons/search.svg',
+            color: kTextColor,
+          ),
           onPressed: () {},
         ),
-        actions: [
-          IconButton(
-            icon: SvgPicture.asset(
-              'assets/icon/search.svg',
-              color: kTextColor,
-            ),
-            onPressed: () {},
+        IconButton(
+          icon: SvgPicture.asset(
+            'assets/icons/cart.svg',
+            color: kTextColor,
           ),
-          IconButton(
-            icon: SvgPicture.asset(
-              'assets/icon/cart.svg',
-              color: kTextColor,
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
+          onPressed: () {},
+        ),
+        const SizedBox(
+          width: kDefaultPadding / 2,
+        )
+      ],
     );
   }
 }

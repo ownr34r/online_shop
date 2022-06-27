@@ -22,7 +22,7 @@ class Product {
 
 List<Product> product = [
   Product(
-    image: 'asset/image/hammer.png',
+    image: 'assets/images/bag_1.png',
     title: 'office Code',
     discription: "молоток ",
     price: 1212,
@@ -31,7 +31,7 @@ List<Product> product = [
     color: Color.fromARGB(255, 67, 174, 61),
   ),
   Product(
-    image: 'asset/image/screwdriver.png',
+    image: 'assets/images/bag_2.png',
     title: 'office Code',
     discription: "отвертка",
     price: 1212,
@@ -40,7 +40,34 @@ List<Product> product = [
     color: Color.fromARGB(255, 61, 130, 174),
   ),
   Product(
-    image: 'asset/image/wrench.png',
+    image: 'assets/images/bag_3.png',
+    title: 'office Code',
+    discription: "разводной ключ",
+    price: 1212,
+    size: 12,
+    id: 1,
+    color: Color.fromARGB(255, 174, 61, 117),
+  ),
+  Product(
+    image: 'assets/images/bag_4.png',
+    title: 'office Code',
+    discription: "разводной ключ",
+    price: 1212,
+    size: 12,
+    id: 1,
+    color: Color.fromARGB(255, 174, 61, 117),
+  ),
+  Product(
+    image: 'assets/images/bag_5.png',
+    title: 'office Code',
+    discription: "разводной ключ",
+    price: 1212,
+    size: 12,
+    id: 1,
+    color: Color.fromARGB(255, 174, 61, 117),
+  ),
+  Product(
+    image: 'assets/images/bag_6.png',
     title: 'office Code',
     discription: "разводной ключ",
     price: 1212,
