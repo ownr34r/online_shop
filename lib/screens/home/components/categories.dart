@@ -52,7 +52,7 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             Container(
-                margin: EdgeInsets.only(top: kDefaultPadding / 6),
+                margin: const EdgeInsets.only(top: kDefaultPadding / 6),
                 height: 2,
                 width: 30,
                 color:
