@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_shop/constans.dart';
 import 'package:online_shop/models/product.dart';
+import 'package:online_shop/screens/details/components/product_title_whit_image.dart';
 
 class BodyDetailWidget extends StatelessWidget {
   const BodyDetailWidget({Key? key, required this.product}) : super(key: key);
@@ -14,8 +15,14 @@ class BodyDetailWidget extends StatelessWidget {
           height: size.height,
           child: Stack(children: [
             Container(
-              height: 500,
-              margin: EdgeInsets.only(top: size.height * 0.3),
+              // height: 500,
+              padding: EdgeInsets.only(
+                  top: size.height * 0.1,
+                  left: kDefaultPadding,
+                  right: kDefaultPadding),
+              margin: EdgeInsets.only(
+                top: size.height * 0.36,
+              ),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -23,55 +30,71 @@ class BodyDetailWidget extends StatelessWidget {
                   topLeft: Radius.circular(24),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Some bag',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    product.title,
-                    style: Theme.of(context).textTheme.headline4?.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
                   Row(
                     children: [
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                            text: 'Price: \n',
-                          ),
-                          TextSpan(
-                            text: '\$${product.price}',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline4
-                                ?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                          ),
-                        ]),
-                      ),
-                      SizedBox(
-                        height: kDefaultPadding * 2,
-                      ),
-                      Expanded(
-                        child: Image.asset(product.image, fit: BoxFit.fitWidth),
-                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Color'),
+                          Row(
+                            children: [
+                              ColorDotWidget(
+                                color: Colors.blue,
+                              ),
+                              ColorDotWidget(
+                                color: Colors.blue,
+                              ),
+                              ColorDotWidget(
+                                color: Colors.blue,
+                              ),
+                            ],
+                          )
+                        ],
+                      )
                     ],
                   )
                 ],
               ),
-            )
+            ),
+            ProductTaleWithImage(product: product)
           ]),
         )
       ]),
+    );
+  }
+}
+
+class ColorDotWidget extends StatelessWidget {
+  final Color color;
+  final bool isSelected;
+  const ColorDotWidget({
+    Key? key,
+    required this.color,
+    this.isSelected = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+        top: kDefaultPadding / 4,
+        right: kDefaultPadding / 2,
+      ),
+      padding: EdgeInsets.all(2),
+      height: 24,
+      width: 24,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: color),
+      ),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+          shape: BoxShape.circle,
+        ),
+      ),
     );
   }
 }
