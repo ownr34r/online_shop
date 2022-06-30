@@ -33,16 +33,18 @@ class ProductTaleWithImage extends StatelessWidget {
           Row(
             children: [
               RichText(
-                text: TextSpan(children: [
-                  TextSpan(
-                    text: 'Price\n',
-                  ),
-                  TextSpan(
-                    text: '\$${product.price}',
-                    style: Theme.of(context).textTheme.headline4?.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ]),
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Price\n',
+                    ),
+                    TextSpan(
+                      text: '\$${product.price}',
+                      style: Theme.of(context).textTheme.headline4?.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: kDefaultPadding * 2,
@@ -51,7 +53,7 @@ class ProductTaleWithImage extends StatelessWidget {
                 child: Image.asset(product.image, fit: BoxFit.fitWidth),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
