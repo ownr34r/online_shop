@@ -78,11 +78,12 @@ class _CartCountWidgetState extends State<CartCounterWidget> {
 
   SizedBox buildCountButton({IconData? icon, Function()? press}) {
     return SizedBox(
-        width: 40,
-        height: 32,
-        child: ElevatedButton(
-          onPressed: press,
-          child: Icon(icon),
-        ));
+      width: 40,
+      height: 32,
+      child: ElevatedButton(
+        onPressed: press,
+        child: Icon(icon),
+      ),
+    );
   }
 }
