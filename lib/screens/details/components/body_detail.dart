@@ -37,7 +37,8 @@ class BodyDetailWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     ColorAndSizeWidget(product: product),
-                    DescriptionWidget(product: product)
+                    DescriptionWidget(product: product),
+                    CartCounterWidget(),
                   ],
                 ),
               ),
@@ -52,7 +53,7 @@ class BodyDetailWidget extends StatelessWidget {
 
 class CartCounterWidget extends StatefulWidget {
   CartCounterWidget({Key? key}) : super(key: key);
-
+  int numOfItems = 1;
   @override
   State<CartCounterWidget> createState() => _CartCountWidgetState();
 }
@@ -60,6 +61,28 @@ class CartCounterWidget extends StatefulWidget {
 class _CartCountWidgetState extends State<CartCounterWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      children: [
+        buildCountButton(icon: Icons.remove, press: () {}),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+          child: Text(
+            '01',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+        ),
+        buildCountButton(icon: Icons.add, press: () {}),
+      ],
+    );
+  }
+
+  SizedBox buildCountButton({IconData? icon, Function()? press}) {
+    return SizedBox(
+        width: 40,
+        height: 32,
+        child: ElevatedButton(
+          onPressed: press,
+          child: Icon(icon),
+        ));
   }
 }
