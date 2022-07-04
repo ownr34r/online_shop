@@ -38,12 +38,11 @@ class BodyDetailWidget extends StatelessWidget {
                     ),
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ColorAndSizeWidget(product: product),
                       DescriptionWidget(product: product),
                       const FavCartWidget(),
-                      SizedBox(height: 10),
                       Row(
                         children: [
                           Container(
@@ -59,20 +58,21 @@ class BodyDetailWidget extends StatelessWidget {
                                   'assets/icons/add_to_cart.svg'),
                             ),
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
                           Expanded(
-                            child: SizedBox(
-                              height: 50,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Buy now'.toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: SizedBox(
+                                height: 50,
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Buy now'.toUpperCase(),
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
