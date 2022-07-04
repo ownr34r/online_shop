@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_shop/constans.dart';
+import 'package:online_shop/models/product.dart';
 
 class CartCounterWidget extends StatefulWidget {
   CartCounterWidget({Key? key}) : super(key: key);
@@ -44,9 +45,12 @@ class _CartCountWidgetState extends State<CartCounterWidget> {
 
   SizedBox buildCountButton({IconData? icon, Function()? press}) {
     return SizedBox(
-      width: 40,
+      width: 32,
       height: 32,
       child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.blue),
+        ),
         onPressed: press,
         child: Icon(icon),
       ),
