@@ -42,7 +42,8 @@ List<Product> products = [
   Product(
     image: 'assets/images/bag_3.png',
     title: 'office Code',
-    discription: "разводной ключ",
+    discription:
+        "The characteristic of Elevated Button is the elevation increases when it's on pressed state. It's also possible to set the initial elevation by passing elevation parameter. For this kind of button, the elevation is set to 0 if the button is disabled. An elevation increase of 2 will be applied if the state is hovered or focused, while pressing the button increases the elevation by 6.",
     price: 542,
     size: 12,
     id: 1,

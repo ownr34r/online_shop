@@ -49,9 +49,7 @@ class ProductTaleWithImage extends StatelessWidget {
               SizedBox(
                 height: kDefaultPadding * 2,
               ),
-              Expanded(
-                child: Image.asset(product.image, fit: BoxFit.fitWidth),
-              ),
+              Expanded(child: Image.asset(product.image, fit: BoxFit.fitWidth)),
             ],
           ),
         ],

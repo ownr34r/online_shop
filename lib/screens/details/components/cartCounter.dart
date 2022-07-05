@@ -43,17 +43,16 @@ class _CartCountWidgetState extends State<CartCounterWidget> {
     );
   }
 
-  SizedBox buildCountButton({IconData? icon, Function()? press}) {
-    return SizedBox(
-      width: 32,
-      height: 32,
-      child: ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.blue),
+  ElevatedButton buildCountButton({IconData? icon, Function()? press}) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        minimumSize: MaterialStateProperty.all(
+          Size(10, 30),
         ),
-        onPressed: press,
-        child: Icon(icon),
+        backgroundColor: MaterialStateProperty.all(Colors.blue),
       ),
+      onPressed: press,
+      child: Icon(icon),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:online_shop/constans.dart';
 import 'package:online_shop/models/product.dart';
+import 'package:online_shop/screens/details/components/add_to_cart.dart';
 import 'package:online_shop/screens/details/components/color_size.dart';
 import 'package:online_shop/screens/details/components/description.dart';
 import 'package:online_shop/screens/details/components/product_title_whit_image.dart';
@@ -38,48 +39,12 @@ class BodyDetailWidget extends StatelessWidget {
                     ),
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       ColorAndSizeWidget(product: product),
                       DescriptionWidget(product: product),
                       const FavCartWidget(),
-                      Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18),
-                              border: Border.all(color: product.color),
-                            ),
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: SvgPicture.asset(
-                                  'assets/icons/add_to_cart.svg'),
-                            ),
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: SizedBox(
-                                height: 50,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Buy now'.toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                      AddToCart(product: product),
                     ],
                   ),
                 ),
